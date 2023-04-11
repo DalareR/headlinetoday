@@ -1,47 +1,13 @@
-import axios from "axios";
-import { Box, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import ArticleBox from "./ArticleBox";
-import { useEffect, useState } from "react";
+import { Article } from "../hooks/useGetArticles";
 
-const key = `6931e5d37075445a96f6b0850b424f03`;
-
-interface Source {
-  id: string | null;
-  name: string | null;
+interface Props {
+  articles: Article[];
+  onClick: (article: Article) => void;
 }
 
-export interface Article {
-  title: string;
-  author: string;
-  description: string;
-  publishedAt: string;
-  source: Source;
-  urlToImage: string;
-}
-
-function Articles() {
-  const controller = new AbortController();
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    getArticle();
-  }, []);
-
-  function getArticle() {
-    const request = axios
-      .get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}`, {
-        signal: controller.signal,
-      })
-      .then((res) => {
-        setArticles(res.data.articles);
-        console.log(res.data.articles);
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
-  }
-
+function Articles({ articles, onClick }: Props) {
   return (
     <Box
       h="100%"
@@ -65,6 +31,7 @@ function Articles() {
             title={article.title}
             source={article.source.name}
             publishDate={article.publishedAt}
+            onClick={() => onClick(article)}
           />
         ))}
       </Box>
