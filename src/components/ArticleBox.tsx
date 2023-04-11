@@ -1,20 +1,47 @@
-import { Box, Image, VStack, Text, HStack } from "@chakra-ui/react";
+import { Box, Image, VStack, Text, HStack, Stack } from "@chakra-ui/react";
 
-function ArticleBox() {
+interface Props {
+  title: string;
+  source: string | null;
+  publishDate: string;
+  imageURL: string | undefined;
+}
+
+function ArticleBox({ title, source, publishDate, imageURL }: Props) {
   return (
-    <HStack borderRadius="15px" boxShadow="5px 5px 15px rgba(0,0,0, .3)">
+    <HStack
+      borderRadius="15px"
+      boxShadow="5px 5px 15px rgba(0,0,0, .3)"
+      m="10px"
+      transition="all .2s ease"
+      _hover={{ transform: "scale(1.03)", transition: "all .2s ease" }}
+      cursor="pointer"
+      alignItems={{ base: "start", md: "center" }}
+    >
       <Image
         w={{ base: "130px", md: "150px" }}
         h={{ base: "130px", md: "150px" }}
+        objectFit="cover"
+        objectPosition="center"
         bg="gray"
         m="10px"
         borderRadius="10%"
+        src={imageURL}
       />
-      <VStack alignItems="start">
-        <Text textStyle="h3">Title Goes Here</Text>
-        <Text textStyle="h4">News Source</Text>
-        <Text fontSize=".9rem" fontStyle="italic" fontWeight="bold">
-          01/02/2024
+      <VStack alignItems="start" p="10px">
+        <Text
+          textStyle="h3"
+          _hover={{
+            textDecor: "underline",
+          }}
+        >
+          {title}
+        </Text>
+        <Text textStyle="h4" color="gray">
+          {source}
+        </Text>
+        <Text fontSize=".9rem" fontWeight="bold">
+          {publishDate}
         </Text>
       </VStack>
     </HStack>
