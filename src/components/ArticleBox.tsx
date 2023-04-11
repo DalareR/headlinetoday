@@ -9,14 +9,15 @@ interface Props {
 
 function ArticleBox({ title, source, publishDate, imageURL }: Props) {
   return (
-    <HStack
+    <Stack
+      direction={{ base: "column", lg: "row" }}
       borderRadius="15px"
       boxShadow="5px 5px 15px rgba(0,0,0, .3)"
       m="10px"
       transition="all .2s ease"
       _hover={{ transform: "scale(1.03)", transition: "all .2s ease" }}
       cursor="pointer"
-      alignItems={{ base: "start", md: "center" }}
+      alignItems="center"
     >
       <Image
         w={{ base: "130px", md: "150px" }}
@@ -44,7 +45,7 @@ function ArticleBox({ title, source, publishDate, imageURL }: Props) {
           {publishDate}
         </Text>
       </VStack>
-    </HStack>
+    </Stack>
   );
 }
 

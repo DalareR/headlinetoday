@@ -18,7 +18,7 @@ function App() {
         }}
         templateColumns={{ base: "auto", md: "1fr 1fr" }}
         gap="5"
-        p="25px"
+        p={{ base: "10px", lg: "25px" }}
       >
         <GridItem h="85vh" gridArea="articles">
           <Articles />

@@ -10,7 +10,12 @@ import {
 
 function ArticleExpanded() {
   return (
-    <Box borderRadius="15px" boxShadow="5px 5px 15px rgba(0,0,0, .3)" p="15px">
+    <Box
+      h="100%"
+      borderRadius="15px"
+      boxShadow="5px 5px 15px rgba(0,0,0, .3)"
+      p="15px"
+    >
       <Flex direction="column">
         <Box flex="1" mb="15px">
           <Image w="400px" h="400px" bg="gray" borderRadius="15px" />

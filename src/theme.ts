@@ -31,7 +31,7 @@ const textStyles = {
     fontFamily: `'Inter', sans-serif`,
   },
   h3: {
-    fontSize: ["1.3rem", "1.5rem"],
+    fontSize: ["1.2rem", "1.5rem"],
     fontWeight: "bold",
     lineHeight: "105%",
     fontFamily: `'Inter', sans-serif`,

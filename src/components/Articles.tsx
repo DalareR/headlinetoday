@@ -47,13 +47,13 @@ function Articles() {
       h="100%"
       position="relative"
       _after={{
-        position: "absolute",
+        position: { base: "fixed", md: "absolute" },
         top: "90%",
         left: "0%",
         content: `''`,
         width: "100%",
         height: "10%",
-        borderRadius: "0 0 15px 15px",
+        borderRadius: { base: "none", md: "0 0 15px 15px" },
         bg: `linear-gradient(0deg, rgba(29,29,29,.5) 0%, rgba(242,113,33,0) 100%)`,
       }}
     >
