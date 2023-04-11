@@ -5,7 +5,7 @@ const styles = {
     body: {
       bg: "#CCCCCC",
       color: "#323232",
-      fontFamily: `'Playfair Display', serif`,
+      fontFamily: `'Inter', sans-serif`,
     },
   },
 };
@@ -22,21 +22,25 @@ const textStyles = {
     fontSize: ["3rem", "4rem"],
     fontWeight: "bold",
     lineHeight: "100%",
+    fontFamily: `'Inter', sans-serif`,
   },
   h2: {
-    fontSize: ["2rem", "3rem"],
+    fontSize: ["1.7rem", "2rem"],
     fontWeight: "bold",
     lineHeight: "100%",
+    fontFamily: `'Inter', sans-serif`,
   },
   h3: {
-    fontSize: ["1.5rem", "2rem"],
+    fontSize: ["1.3rem", "1.5rem"],
     fontWeight: "bold",
-    lineHeight: "100%",
+    lineHeight: "105%",
+    fontFamily: `'Inter', sans-serif`,
   },
   h4: {
     fontSize: [".8rem", "1.2rem"],
     fontWeight: "bold",
     lineHeight: "100%",
+    fontFamily: `'Inter', sans-serif`,
   },
 };
 
