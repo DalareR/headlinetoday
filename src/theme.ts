@@ -1,5 +1,15 @@
 import { extendTheme } from "@chakra-ui/react";
 
+const styles = {
+  global: {
+    body: {
+      bg: "#CCCCCC",
+      color: "#323232",
+      fontFamily: `'Playfair Display', serif`,
+    },
+  },
+};
+
 const colors = {
   brand: {
     100: "#B10000",
@@ -23,6 +33,11 @@ const textStyles = {
     fontWeight: "bold",
     lineHeight: "100%",
   },
+  h4: {
+    fontSize: ["1rem", "1.5rem"],
+    fontWeight: "bold",
+    lineHeight: "100%",
+  },
 };
 
-export const theme = extendTheme({ textStyles, colors });
+export const theme = extendTheme({ textStyles, colors, styles });
