@@ -1,3 +1,4 @@
+import { CanceledError } from "axios";
 import { apiClient } from "../services/apiClient";
 import { useEffect, useState } from "react";
 
@@ -38,7 +39,7 @@ function useGetArticles() {
         setSelectedArticle(res.data.articles[0]);
       })
       .catch((err) => {
-        if (err instanceof AbortSignal) return;
+        if (err instanceof CanceledError) return;
         setError(err.message);
       });
 
