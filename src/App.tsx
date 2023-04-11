@@ -1,3 +1,4 @@
+import { Grid, GridItem } from "@chakra-ui/react";
 import ArticleBox from "./components/ArticleBox";
 import ArticleExpanded from "./components/ArticleExpanded";
 import NavBar from "./components/NavBar";
@@ -8,7 +9,22 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ArticleExpanded />
+      <Grid
+        gridTemplateAreas={{
+          base: `'articleExpanded' 'articles'`,
+          md: `'articles articleExpanded'`,
+        }}
+        templateColumns={{ base: "auto", md: "1fr 1fr" }}
+        gap="5"
+        p="25px"
+      >
+        <GridItem gridArea="articles">
+          <ArticleBox />
+        </GridItem>
+        <GridItem gridArea="articleExpanded">
+          <ArticleExpanded />
+        </GridItem>
+      </Grid>
     </div>
   );
 }
