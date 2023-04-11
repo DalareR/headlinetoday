@@ -1,13 +1,14 @@
-import { Box, Image, VStack, Text, HStack, Stack } from "@chakra-ui/react";
+import { Image, VStack, Text, Stack } from "@chakra-ui/react";
 
 interface Props {
   title: string;
   source: string | null;
   publishDate: string;
   imageURL: string | undefined;
+  onClick: React.MouseEventHandler;
 }
 
-function ArticleBox({ title, source, publishDate, imageURL }: Props) {
+function ArticleBox({ title, source, publishDate, imageURL, onClick }: Props) {
   return (
     <Stack
       direction={{ base: "column", lg: "row" }}
@@ -18,6 +19,7 @@ function ArticleBox({ title, source, publishDate, imageURL }: Props) {
       _hover={{ transform: "scale(1.03)", transition: "all .2s ease" }}
       cursor="pointer"
       alignItems="center"
+      onClick={onClick}
     >
       <Image
         w={{ base: "130px", md: "150px" }}
