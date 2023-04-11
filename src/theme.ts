@@ -34,7 +34,7 @@ const textStyles = {
     lineHeight: "100%",
   },
   h4: {
-    fontSize: ["1rem", "1.5rem"],
+    fontSize: [".8rem", "1.2rem"],
     fontWeight: "bold",
     lineHeight: "100%",
   },
