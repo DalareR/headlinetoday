@@ -19,7 +19,7 @@ const colors = {
 
 const textStyles = {
   h1: {
-    fontSize: ["3rem", "4rem"],
+    fontSize: ["2.5rem", "4rem"],
     fontWeight: "bold",
     lineHeight: "100%",
     fontFamily: `'Inter', sans-serif`,
