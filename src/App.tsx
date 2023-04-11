@@ -1,15 +1,19 @@
-import { Box, Grid, GridItem } from "@chakra-ui/react";
-import ArticleBox from "./components/ArticleBox";
+import { Grid, GridItem } from "@chakra-ui/react";
 import ArticleExpanded from "./components/ArticleExpanded";
 import NavBar from "./components/NavBar";
 import Articles from "./components/Articles";
-
-const key = `6931e5d37075445a96f6b0850b424f03`;
+import useGetArticles, { Article } from "./hooks/useGetArticles";
 
 function App() {
+  const { articles, error, selectedArticle, setSelectedArticle } =
+    useGetArticles();
+
+  function handleArticleClick(article: Article) {
+    setSelectedArticle(article);
+  }
+
   return (
     <div className="App">
-      {/* <Articles /> */}
       <NavBar />
       <Grid
         gridTemplateAreas={{
@@ -21,10 +25,10 @@ function App() {
         p={{ base: "10px", lg: "25px" }}
       >
         <GridItem h="85vh" gridArea="articles">
-          <Articles />
+          <Articles onClick={handleArticleClick} articles={articles} />
         </GridItem>
-        <GridItem gridArea="articleExpanded">
-          <ArticleExpanded />
+        <GridItem gridArea="articleExpanded" h="85vh" p="15px">
+          <ArticleExpanded article={selectedArticle} />
         </GridItem>
       </Grid>
     </div>
